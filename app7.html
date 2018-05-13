@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>App 6</title>
+  <script src="http://192.168.0.15/zkweb/vuejs/vuejs2516.js"></script>
+</head>
+<body>
+  <div id="app-7">
+		<p>{{ message }}</p>
+		<input v-model="message"></br>
+		<input v-model="counter"></br>
+		<button v-on:click="hello()">Click Me</button></br>
+		<input type="checkbox" id="jack" value="Jack" v-model="checkedNames">
+		<label for="jack">Jack</label>
+		<input type="checkbox" id="john" value="John" v-model="checkedNames">
+		<label for="john">John</label>
+		<input type="checkbox" id="mike" value="Mike" v-model="checkedNames">
+		<label for="mike">Mike</label>
+		<br>
+		<span>Checked names: {{ checkedNames }}</span>
+	</div>
+</body>
+</html>
+
+<script>
+	new Vue({
+		el: '#app-7',
+		data: {
+			counter: 0,
+			message: '888',
+			checkedNames: []
+		},
+		methods: {
+			hello: function(){
+				this.message = this.counter++
+			}
+		}
+	})
+</script>
